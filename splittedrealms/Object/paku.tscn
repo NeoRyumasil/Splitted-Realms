@@ -1,31 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvef32klncc54"]
+[gd_scene load_steps=5 format=3 uid="uid://bvef32klncc54"]
 
 [ext_resource type="Script" path="res://Scripts/paku.gd" id="1_ex1da"]
-[ext_resource type="Texture2D" uid="uid://d183hxv18r018" path="res://Resources/spriteset.png" id="2_33q28"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1wyt"]
-atlas = ExtResource("2_33q28")
-region = Rect2(1020, 720, 255, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_frcd5"]
-atlas = ExtResource("2_33q28")
-region = Rect2(1020, 630, 255, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jaa3a"]
-atlas = ExtResource("2_33q28")
-region = Rect2(1020, 540, 255, 90)
+[ext_resource type="Texture2D" uid="uid://rbjnbfnb8mra" path="res://Resources/Object/duri.png" id="2_lykeq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xkhr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w1wyt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_frcd5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jaa3a")
+"texture": ExtResource("2_lykeq")
 }],
 "loop": true,
 "name": &"default",
@@ -41,7 +23,7 @@ script = ExtResource("1_ex1da")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_7xkhr")
-frame_progress = 0.294253
+frame_progress = 0.278009
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 1)

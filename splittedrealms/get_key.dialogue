@@ -1,0 +1,6 @@
+~ get_key
+set PlayerStatu.onCutScene = true
+Aurevelle : A key?
+Aurevelle : This should open the door
+set PlayerStatus.onCutscene = false
+=> END

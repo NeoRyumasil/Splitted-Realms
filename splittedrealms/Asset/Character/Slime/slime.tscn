@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d0q3ktelxiw3b"]
+[gd_scene load_steps=54 format=3 uid="uid://bx5lbe6i07jx"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_c6dl2"]
 [ext_resource type="Texture2D" uid="uid://b0dvw85ir0wjg" path="res://Resources/Slime/slime black death.png" id="2_v6upn"]
@@ -349,7 +349,7 @@ script = ExtResource("1_c6dl2")
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_34f4i")
 animation = &"Death"
-frame_progress = 0.62399
+frame_progress = 0.80764
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3.5)
