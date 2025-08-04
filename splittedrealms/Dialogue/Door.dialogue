@@ -1,0 +1,6 @@
+~ door
+set PlayerStatus.onCutScene = true
+Aurevelle : Locked....
+Aurevelle : Is there any key around here?
+set PlayerStatus.onCutscene = false
+=> END

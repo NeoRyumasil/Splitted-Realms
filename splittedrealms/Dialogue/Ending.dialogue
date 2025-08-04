@@ -1,0 +1,13 @@
+~ Ending
+Aurevelle : This door seems... different.
+Aurevelle : I wonder where it leads...
+Aurevelle : Well... only one way to find out.
+Aurevelle : ...Wait. What is—
+(To Be Continued)
+
+Credits: Arif Rahmatiana (Designer)
+Credits: Devo Savero (Artist)
+Credits: Muhammad Alvin Ababil(Programmer)
+
+do get_tree().change_scene_to_file("res://Scene//Game_Over.tscn")
+=> END

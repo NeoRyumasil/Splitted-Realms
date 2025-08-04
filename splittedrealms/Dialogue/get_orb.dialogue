@@ -1,19 +1,7 @@
-# ~ Ending
-PlayerStatus.onCutScene = true
-
-Aurevelle : This door seems... different.
-Aurevelle : I wonder where it leads...
-
-# [SFX: low ambient hum intensifies]
-# [Camera slowly pans toward the door]
-
-Aurevelle : Well... only one way to find out.
-
-# [She steps forward. The door creaks open on its own.]
-
-# [SFX: sudden bass drop, screen flickers]
-
-Aurevelle : ...Wait. What is—
-PlayerStatus.onCutScene = false
-
+~ get_orb
+set PlayerStatus.onCutScene = true
+Aurevelle : An orb?
+Aurevelle : I wonder what can it do?
+(Press W to Activate the orb) 
+set PlayerStatus.onCutscene = false
 => END

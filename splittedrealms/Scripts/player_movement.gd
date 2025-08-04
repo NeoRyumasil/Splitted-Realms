@@ -53,12 +53,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("Shoot"):
 			if PlayerStatus.haveOrb == true:
 				shoot()
+				
+		if Input.is_action_just_pressed("Escape"):
+			get_tree().change_scene_to_file("res://Scene/Game_Over.tscn")
 	
 	if PlayerStatus.HP <= 0 :
 		$Animation.play("Death")
-		await $Animation.animation_finished
 		queue_free()
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/game_over.tscn")
+		get_tree().change_scene_to_file("res://Scene/main_menu.tscn")
 		
 	move_and_slide()
 

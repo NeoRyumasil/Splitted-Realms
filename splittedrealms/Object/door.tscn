@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0nr8btlbxf58"]
 
-[ext_resource type="Script" path="res://Scripts/key.gd" id="1_70y05"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_iggna"]
 [ext_resource type="Texture2D" uid="uid://c0s1mqgtfbstw" path="res://Resources/Object/pintu.png" id="2_3ftry"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lu38"]
@@ -21,7 +21,7 @@ size = Vector2(24, 24)
 
 [node name="Door" type="Node2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_70y05")
+script = ExtResource("1_iggna")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

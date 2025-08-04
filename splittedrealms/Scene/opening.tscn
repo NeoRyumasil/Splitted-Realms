@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://1dhhtv6trdeo"]
+[gd_scene load_steps=16 format=3 uid="uid://1dhhtv6trdeo"]
 
+[ext_resource type="Script" path="res://Scripts/opening.gd" id="1_iidoq"]
 [ext_resource type="Texture2D" uid="uid://bm8g2b4cdbn3t" path="res://Resources/Background/bg ethereal.png" id="1_v4unm"]
 [ext_resource type="Texture2D" uid="uid://blxxh6c6svvq6" path="res://Resources/Background/bg ethereal 2.png" id="2_tcjpt"]
 [ext_resource type="Texture2D" uid="uid://dfdnp3iexket6" path="res://Resources/Background/bg.png" id="3_j1dmf"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b37e2k65ad2xt" path="res://Resources/asset ethereal.png" id="6_du32k"]
 [ext_resource type="PackedScene" uid="uid://t1sv5nmiv0cw" path="res://Asset/Character/Player/player.tscn" id="7_jfo38"]
 [ext_resource type="PackedScene" uid="uid://dr05a5s6rvq2g" path="res://Object/camera.tscn" id="8_8yvqv"]
+[ext_resource type="Script" path="res://Scripts/health.gd" id="11_s0jpp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17fhb"]
 texture = ExtResource("5_1erwf")
@@ -5703,6 +5705,27 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_0btnl")
 
 [node name="Opening" type="Node2D"]
+script = ExtResource("1_iidoq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+z_index = 10
+offset_left = 26.0
+offset_top = -149.0
+offset_right = 122.0
+offset_bottom = -118.0
+scale = Vector2(1.65982, 1.58538)
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="UI"]
+z_index = 10
+offset_left = 34.0
+offset_top = -94.0
+offset_right = 99.0
+offset_bottom = -71.0
+text = "Health : "
+script = ExtResource("11_s0jpp")
 
 [node name="Backgrounds 2" type="Node2D" parent="."]
 visible = false
@@ -5739,6 +5762,7 @@ texture = ExtResource("4_8hh5k")
 
 [node name="DoorOpened" parent="." instance=ExtResource("5_6ghdc")]
 position = Vector2(1618, -60)
+target_scene_path = "res://Scene/puzzle1.tscn"
 
 [node name="TileMaps 1" type="Node2D" parent="."]
 
@@ -5767,3 +5791,5 @@ limit_top = -350
 limit_right = 1800
 limit_bottom = 300
 target_node_path = NodePath("../Player")
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
