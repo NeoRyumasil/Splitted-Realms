@@ -1,8 +1,19 @@
-~ get_orb
-set PlayerStatus.onCutscene = true
-Aurevelle : Hmmm...?
-Aurevelle : A Staff...
-Aurevelle : What can i do with this?
-(Press W to activate the staff)
-set PlayerStatus.onCutscene = false
+# ~ Ending
+PlayerStatus.onCutScene = true
+
+Aurevelle : This door seems... different.
+Aurevelle : I wonder where it leads...
+
+# [SFX: low ambient hum intensifies]
+# [Camera slowly pans toward the door]
+
+Aurevelle : Well... only one way to find out.
+
+# [She steps forward. The door creaks open on its own.]
+
+# [SFX: sudden bass drop, screen flickers]
+
+Aurevelle : ...Wait. What is—
+PlayerStatus.onCutScene = false
+
 => END

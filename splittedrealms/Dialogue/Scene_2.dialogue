@@ -1,0 +1,6 @@
+~ Scene2
+set PlayerStatus.onCutScene = true
+Aurevelle : I want to know more about this orb
+(Press S to Shoot the Orb)
+set PlayerStatus.onCutscene = false
+=> END

@@ -12,6 +12,9 @@ var health = 4
 
 func _ready():
 	$Animation.play("Idle")
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -31,7 +34,6 @@ func _physics_process(delta):
 		if chase:
 			if $Animation.animation != "Death":
 				$Animation.play("Walk")
-				player = get_parent().get_node("Player")
 				var direction = (player.position - self.position).normalized()
 				if direction.x < 0:
 					$Animation.flip_h = false

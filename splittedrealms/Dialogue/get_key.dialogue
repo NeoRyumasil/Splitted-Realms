@@ -1,0 +1,8 @@
+~ get_key
+set PlayerStatus.onCutScene = true
+Aurevelle : A key?
+Aurevelle : This should open the door
+Aurevelle : I can use the orb to go back...
+Aurevelle : But i should use it carefully 
+set PlayerStatus.onCutscene = false
+=> END

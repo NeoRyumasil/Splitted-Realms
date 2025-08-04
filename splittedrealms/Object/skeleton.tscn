@@ -86,9 +86,9 @@ shape = SubResource("RectangleShape2D_2iaql")
 [node name="Player_Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Detector"]
-position = Vector2(-3, 3)
+position = Vector2(-2, -1)
 rotation = -3.14159
-scale = Vector2(8.27944, 7.57007)
+scale = Vector2(50.4072, 46.0884)
 shape = SubResource("CircleShape2D_qhrx4")
 
 [node name="Hit_Zone" type="Area2D" parent="."]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 80.0
-const JUMP_VELOCITY = -350.0
+const SPEED = 160.0
+const JUMP_VELOCITY = -500.0
 
 const REALM1_MASK = 1
 const REALM2_MASK = 2
@@ -20,6 +20,8 @@ func _ready():
 	tilemap2.visible = false
 	background2.visible = false
 	$Animation.play("Idle")
+	add_to_group("player")
+
 
 	# Player hanya deteksi realm 1 (layer 1)
 	self.collision_mask = REALM1_MASK

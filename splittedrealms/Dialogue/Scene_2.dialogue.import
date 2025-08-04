@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://e3lvsritnb7w"
+path="res://.godot/imported/Scene_2.dialogue-c2e55f61b720b380ee30ed219157762a.tres"
+
+[deps]
+
+source_file="res://Dialogue/Scene_2.dialogue"
+dest_files=["res://.godot/imported/Scene_2.dialogue-c2e55f61b720b380ee30ed219157762a.tres"]
+
+[params]
+
+defaults=true

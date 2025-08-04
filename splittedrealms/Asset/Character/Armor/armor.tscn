@@ -295,7 +295,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iaql"]
-size = Vector2(26, 23)
+size = Vector2(26, 18.8799)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p3kk"]
 size = Vector2(32, 22)
@@ -304,7 +304,7 @@ size = Vector2(32, 22)
 size = Vector2(12.2375, 74.2566)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tmgh"]
-size = Vector2(34, 26)
+size = Vector2(34, 40)
 
 [node name="Armor" type="CharacterBody2D"]
 script = ExtResource("1_o25go")
