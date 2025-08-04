@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bphk0syvt6dnf"]
+
+[ext_resource type="Texture2D" uid="uid://cng2fss18q31s" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="1_7fy3x"]
+[ext_resource type="Texture2D" uid="uid://cdlky6awxi543" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Default.png" id="2_3yox6"]
+[ext_resource type="Texture2D" uid="uid://cr2fv074q1dyg" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Hover.png" id="3_17qp2"]
+[ext_resource type="Texture2D" uid="uid://lsf6ohe075he" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Default@0.5x-1.png" id="6_mqebe"]
+[ext_resource type="Texture2D" uid="uid://d3avapqbowh2e" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Hover@2x-3.png" id="7_aepmq"]
+
+[node name="Main_Menu" type="Node2D"]
+position = Vector2(2, -3)
+
+[node name="Main_Menu" type="CanvasLayer" parent="."]
+
+[node name="Default" type="Sprite2D" parent="Main_Menu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(585, 327)
+scale = Vector2(0.234797, 0.234797)
+texture = ExtResource("1_7fy3x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main_Menu"]
+offset_left = 108.0
+offset_top = 126.0
+offset_right = 253.0
+offset_bottom = 179.0
+scale = Vector2(6.53087, 6.53087)
+text = "        You Died"
+
+[node name="Buttons" type="Control" parent="Main_Menu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -404.0
+offset_top = 74.0
+offset_right = -364.0
+offset_bottom = 114.0
+
+[node name="PlayButton" type="TextureButton" parent="Main_Menu/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.725
+anchor_top = 4.175
+anchor_right = 6.725
+anchor_bottom = 5.75
+offset_left = 452.0
+offset_top = 99.0
+offset_right = 568.0
+offset_bottom = 120.0
+scale = Vector2(1.36024, 1.36024)
+texture_normal = ExtResource("2_3yox6")
+texture_pressed = ExtResource("2_3yox6")
+texture_hover = ExtResource("3_17qp2")
+
+[node name="ExitButton" type="TextureButton" parent="Main_Menu/Buttons"]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 270.0
+offset_right = 1095.0
+offset_bottom = 312.0
+scale = Vector2(2.73194, 2.73194)
+texture_normal = ExtResource("6_mqebe")
+texture_pressed = ExtResource("6_mqebe")
+texture_hover = ExtResource("7_aepmq")

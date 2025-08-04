@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://b58l6oo5lhxro"]
+
+[ext_resource type="Texture2D" uid="uid://sh8vd2xsxupb" path="res://Test/Assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Props Items and VFX/acorn/Sprites/acorn-1.png" id="1_s5qin"]
+[ext_resource type="Texture2D" uid="uid://c6x0j0w15a4px" path="res://Test/Assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Props Items and VFX/acorn/Sprites/acorn-2.png" id="2_yg5ai"]
+[ext_resource type="Texture2D" uid="uid://dql6h221d125q" path="res://Test/Assets/Sunny Land Collection Files/Sunny Land Collection Files/Assets/Props Items and VFX/acorn/Sprites/acorn-3.png" id="3_57rge"]
+[ext_resource type="Script" path="res://Scripts/orb.gd" id="4_hek1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7raeo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s5qin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yg5ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_57rge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppfyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5adeb"]
+radius = 16.1245
+
+[node name="Orb" type="Node2D"]
+script = ExtResource("4_hek1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7raeo")
+frame_progress = 0.774673
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ppfyi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5adeb")
+
+[node name="Tutorial" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -42.0
+offset_top = -36.0
+offset_right = 43.0
+offset_bottom = -13.0
+theme_override_font_sizes/font_size = 16
+text = "(E) Interact"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

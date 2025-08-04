@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d1i0ykkcn44q2"
+path="res://.godot/imported/get_orb.dialogue-517eac4b3886856a015a486822f0009f.tres"
+
+[deps]
+
+source_file="res://Dialogue/get_orb.dialogue"
+dest_files=["res://.godot/imported/get_orb.dialogue-517eac4b3886856a015a486822f0009f.tres"]
+
+[params]
+
+defaults=true

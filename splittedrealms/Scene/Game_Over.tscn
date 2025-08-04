@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://5dv8mjbigp4h"]
+
+[ext_resource type="Texture2D" uid="uid://cng2fss18q31s" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="1_m7qnl"]
+[ext_resource type="Texture2D" uid="uid://cdlky6awxi543" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Default.png" id="2_d2sna"]
+[ext_resource type="Texture2D" uid="uid://cr2fv074q1dyg" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Hover.png" id="3_jtyeg"]
+[ext_resource type="Texture2D" uid="uid://bd6mg6bmwuo78" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayIcon/Default.png" id="4_tjftt"]
+[ext_resource type="Texture2D" uid="uid://dkssa3lka4ukj" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayIcon/Hover.png" id="5_f7t1t"]
+[ext_resource type="Texture2D" uid="uid://lsf6ohe075he" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Default@0.5x-1.png" id="6_doi25"]
+[ext_resource type="Texture2D" uid="uid://d3avapqbowh2e" path="res://Test/Assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Rect/PlayText/Hover@2x-3.png" id="7_o24m5"]
+
+[node name="Main_Menu" type="Node2D"]
+position = Vector2(2, -3)
+
+[node name="Main_Menu" type="CanvasLayer" parent="."]
+
+[node name="Default" type="Sprite2D" parent="Main_Menu"]
+position = Vector2(572, 324)
+scale = Vector2(0.234797, 0.234797)
+texture = ExtResource("1_m7qnl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main_Menu"]
+offset_left = 133.0
+offset_top = 9.0
+offset_right = 278.0
+offset_bottom = 62.0
+scale = Vector2(6.53087, 6.53087)
+text = "  Splitted Realm"
+
+[node name="Buttons" type="Control" parent="Main_Menu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -404.0
+offset_top = 74.0
+offset_right = -364.0
+offset_bottom = 114.0
+
+[node name="PlayButton" type="TextureButton" parent="Main_Menu/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.725
+anchor_top = 4.175
+anchor_right = 6.725
+anchor_bottom = 5.75
+offset_left = 619.0
+offset_top = -41.0
+offset_right = 735.0
+offset_bottom = -20.0
+scale = Vector2(1.36024, 1.36024)
+texture_normal = ExtResource("2_d2sna")
+texture_pressed = ExtResource("2_d2sna")
+texture_hover = ExtResource("3_jtyeg")
+
+[node name="ContinueButton" type="TextureButton" parent="Main_Menu/Buttons"]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 269.0
+offset_right = 1009.0
+offset_bottom = 353.0
+scale = Vector2(1.31819, 1.31819)
+texture_normal = ExtResource("4_tjftt")
+texture_pressed = ExtResource("4_tjftt")
+texture_hover = ExtResource("5_f7t1t")
+
+[node name="ExitButton" type="TextureButton" parent="Main_Menu/Buttons"]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 420.0
+offset_right = 913.0
+offset_bottom = 462.0
+scale = Vector2(2.73194, 2.73194)
+texture_normal = ExtResource("6_doi25")
+texture_pressed = ExtResource("6_doi25")
+texture_hover = ExtResource("7_o24m5")
