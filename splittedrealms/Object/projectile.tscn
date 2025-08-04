@@ -1,30 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://b58l6oo5lhxro"]
+[gd_scene load_steps=11 format=3 uid="uid://y6mc1481e0bl"]
 
-[ext_resource type="Texture2D" uid="uid://dn6hnd5286iki" path="res://Resources/Object/tembak.png" id="2_3h8ho"]
-[ext_resource type="Script" path="res://Scripts/orb.gd" id="4_hek1a"]
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_dsr3y"]
+[ext_resource type="Texture2D" uid="uid://dn6hnd5286iki" path="res://Resources/Object/tembak.png" id="2_6ncyo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0hqu"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(0, 0, 960, 810)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrife"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(0, 810, 960, 810)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfvww"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(0, 1620, 960, 810)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4k1ol"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(0, 2430, 960, 810)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78130"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(1920, 0, 960, 810)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8m5l"]
-atlas = ExtResource("2_3h8ho")
+atlas = ExtResource("2_6ncyo")
 region = Rect2(1920, 1620, 960, 810)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7raeo"]
@@ -55,16 +55,13 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppfyi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5adeb"]
-radius = 16.1245
-
-[node name="Orb" type="Node2D"]
-script = ExtResource("4_hek1a")
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_dsr3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-3.57628e-07, -2.38419e-07)
-rotation = 1.57569
+position = Vector2(-2.23517e-08, -12)
+rotation = -0.0197105
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_7raeo")
 animation = &"new_animation"
@@ -72,20 +69,4 @@ animation = &"new_animation"
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ppfyi")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Collision" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_5adeb")
-
-[node name="Tutorial" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -42.0
-offset_top = -36.0
-offset_right = 43.0
-offset_bottom = -13.0
-theme_override_font_sizes/font_size = 16
-text = "(E) Interact"
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

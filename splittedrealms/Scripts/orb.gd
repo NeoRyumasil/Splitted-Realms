@@ -25,6 +25,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _interaction():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/get_orb.dialogue"), dialogStart)
-	#GlobalItems.haveOrb = true
+	PlayerStatus.haveOrb = true
 	queue_free()
 	
