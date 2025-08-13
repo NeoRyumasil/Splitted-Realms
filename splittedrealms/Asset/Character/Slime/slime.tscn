@@ -202,7 +202,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pa8ic")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 7.0
 }, {
@@ -240,7 +240,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpyha")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 11.0
 }, {
@@ -337,7 +337,7 @@ size = Vector2(26, 18.8799)
 size = Vector2(32, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kg8n"]
-size = Vector2(12.2375, 74.2566)
+size = Vector2(29.8481, 74.2566)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tmgh"]
 size = Vector2(34, 40)
@@ -348,8 +348,9 @@ script = ExtResource("1_c6dl2")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_34f4i")
-animation = &"Death"
-frame_progress = 0.80764
+animation = &"Hit"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3.5)
@@ -364,7 +365,7 @@ shape = SubResource("RectangleShape2D_1p3kk")
 [node name="Player_Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Detector"]
-position = Vector2(-3, -20)
+position = Vector2(-3.5, -20)
 rotation = -3.14159
 scale = Vector2(7.67218, -1.11062)
 shape = SubResource("RectangleShape2D_7kg8n")
@@ -380,4 +381,4 @@ shape = SubResource("RectangleShape2D_1tmgh")
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="Player_Detector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="Player_Detector" to="." method="_on_player_detector_body_exited"]
-[connection signal="body_entered" from="Hit_Zone" to="." method="_on_hit_zone_body_entered"]
+[connection signal="area_entered" from="Hit_Zone" to="." method="_on_hit_zone_area_entered"]
