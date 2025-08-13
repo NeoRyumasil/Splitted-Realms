@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b58l6oo5lhxro" path="res://Object/Orb.tscn" id="9_67ser"]
 [ext_resource type="PackedScene" uid="uid://bvef32klncc54" path="res://Object/paku.tscn" id="10_3u214"]
 [ext_resource type="Texture2D" uid="uid://b37e2k65ad2xt" path="res://Resources/asset ethereal.png" id="11_1ntgr"]
-[ext_resource type="PackedScene" path="res://Asset/Character/Player/player.tscn" id="12_wbdhm"]
+[ext_resource type="PackedScene" uid="uid://t1sv5nmiv0cw" path="res://Asset/Character/Player/player.tscn" id="12_wbdhm"]
 [ext_resource type="PackedScene" uid="uid://dr05a5s6rvq2g" path="res://Object/camera.tscn" id="13_wi83y"]
 [ext_resource type="Script" path="res://Scripts/health.gd" id="14_be133"]
 
