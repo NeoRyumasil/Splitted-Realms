@@ -1,34 +1,64 @@
 extends CharacterBody2D
 
-var SPEED = 80
-var player
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var chase = false
+# Attribut Objek
+var SPEED = 60
 var health = 15
 
+# Attribut Knockback
+var knockback_force = Vector2.ZERO
+var knockback_duration = 0.2
+var knockback_timer = 0.0
+
+# Nodes
+var player
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+# Booleans
+var is_hit = false
+var is_attack = false
+var chase = false
+
 func _ready():
+	# Set Player dan Animasi
 	$Animation.play("Idle")
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
 
 func _physics_process(delta):
+	# Set Gravity Physics
 	velocity.y += gravity * delta
-	if chase == true :
-		if $Animation.animation != "Death":
-			$Animation.play("Walk")
-			player = get_parent().get_node("Player")
-			var direction = (player.position - self.position).normalized()
-			if direction.x < 0:
-				$Animation.flip_h = false
-				velocity.x = direction.x * SPEED
-			elif direction.x > 0 :
-				$Animation.flip_h = true
-				velocity.x = direction.x * SPEED
-	else :
-		if $Animation.animation != "Death":
-			$Animation.play("Idle")
-		velocity.x = 0
 	
-	if health <= 0 :
+	# Death
+	if health <= 0:
 		death()
+		return
+
+	# Knockback Physics
+	if knockback_timer > 0:
+		velocity = knockback_force
+		knockback_timer -= delta
+	else:
+		# Hit Physics
+		if is_hit or is_attack:
+			velocity.x = 0
+		elif chase and player:
+			# Pergerakan
+			var direction = (player.global_position - global_position).normalized()
+			velocity.x = direction.x * SPEED
+
+			# Flip animasi sesuai arah
+			$Animation.flip_h = direction.x > 0
+
+			# Animasi Jalan
+			if abs(velocity.x) > 10:
+				$Animation.play("Walk")
+			else:
+				$Animation.play("Idle")
+		else:
+			velocity.x = 0
+			$Animation.play("Idle")
+
 	move_and_slide()
 
 func _on_player_detector_body_entered(body):
@@ -41,11 +71,20 @@ func _on_player_detector_body_exited(body):
 		chase = false
 	pass # Replace with function body.
 
-func _on_hit_zone_body_entered(body):
-	if body.name == "Projectile":
+func _on_hit_zone_area_entered(area: Area2D) -> void:
+	# Mekanik Kena Projectile
+	if area.name == "Projectile":
 		$Animation.play("Hit")
-		health -= 3;
-	pass # Replace with function body.
+		health -= 3
+		is_hit = true
+		
+		# Mekanik Knockback
+		var direction = (global_position - area.global_position).normalized()
+		knockback_force = direction * 300
+		knockback_timer = knockback_duration
+
+		await $Animation.animation_finished
+		is_hit = false
 
 func death():
 	velocity.x = 0
@@ -55,6 +94,17 @@ func death():
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		$Animation.play("Attack")
+		print("Hit")
 		PlayerStatus.HP -= 2
+		is_attack = true
+		$Animation.play("Attack")
+		
+		await $Animation.animation_finished
+		is_attack = false
+	pass # Replace with function body.
+
+
+func _on_attack_area_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		is_attack = false
 	pass # Replace with function body.

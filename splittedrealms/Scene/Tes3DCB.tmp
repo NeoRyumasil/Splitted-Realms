@@ -5826,11 +5826,11 @@ position = Vector2(520.986, 176.375)
 scale = Vector2(0.792829, 0.725637)
 texture = ExtResource("4_76fw5")
 
+[node name="armored" parent="Backgrounds 1" instance=ExtResource("9_6f2r1")]
+position = Vector2(481, 194)
+
 [node name="Player" parent="." instance=ExtResource("7_4e6k8")]
 position = Vector2(200, 188)
-
-[node name="armored" parent="." instance=ExtResource("9_6f2r1")]
-position = Vector2(481, 194)
 
 [node name="Orb" parent="." instance=ExtResource("9_moij5")]
 position = Vector2(295, 208)
