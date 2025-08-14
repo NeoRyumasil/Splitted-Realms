@@ -86,12 +86,14 @@ func _on_hit_zone_area_entered(area: Area2D) -> void:
 		await $Animation.animation_finished
 		is_hit = false
 
+# Meninggal
 func death():
 	velocity.x = 0
 	$Animation.play("Death")
 	await $Animation.animation_finished
 	self.queue_free()
 
+# Serang
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Hit")
@@ -103,7 +105,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		is_attack = false
 	pass # Replace with function body.
 
-
+# Player keluar dari area serang
 func _on_attack_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		is_attack = false

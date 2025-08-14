@@ -127,6 +127,6 @@ func HPRestore():
 	PlayerStatus.HP += 0.01
 
 func _on_hit_zone_body_entered(body: Node2D) -> void:
-	if (body.name == "Armor" || body.name == "Slime" || body.name == "Arrow" || body.name == "Skeleton"):
+	if (body.name == "armored" || body.name == "slime" || body.name == "arrow" || body.name == "skeleton"):
 		$Animation.play("Hit")
 	pass # Replace with function body.
