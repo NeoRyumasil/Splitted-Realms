@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d3ki6w4hnuha0"]
+[gd_scene load_steps=49 format=3 uid="uid://php2uyveequk"]
 
 [ext_resource type="Script" path="res://Scripts/armor.gd" id="1_o25go"]
 [ext_resource type="Texture2D" uid="uid://ci1v10rf8u3u5" path="res://Resources/Armor/iron attack.png" id="2_8ko8j"]

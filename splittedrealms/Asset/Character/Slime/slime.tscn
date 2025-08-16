@@ -331,7 +331,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p3kk"]
-size = Vector2(34, 21)
+size = Vector2(40, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kg8n"]
 size = Vector2(74.2944, 74.2566)
@@ -360,6 +360,7 @@ position = Vector2(-3, 2.5)
 shape = SubResource("RectangleShape2D_1p3kk")
 
 [node name="Player_Detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Detector"]
 position = Vector2(-12, -20)
@@ -368,6 +369,7 @@ scale = Vector2(7.67218, -1.11062)
 shape = SubResource("RectangleShape2D_7kg8n")
 
 [node name="Hit_Zone" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Zone"]
 position = Vector2(-3, 2.5)

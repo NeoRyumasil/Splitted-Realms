@@ -11,13 +11,13 @@ func _physics_process(delta):
 
 func _ready():
 	velocity = Vector2.RIGHT.rotated(rotation) * speed
+	add_to_group("enemy")
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()
 
-
 func _on_body_entered(body):
 	# Kalau kena objek, bisa dihancurkan
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		PlayerStatus.HP -= 1
 		print("Hit:", body.name)
 		queue_free()

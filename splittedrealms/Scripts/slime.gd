@@ -23,6 +23,7 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
+	add_to_group("enemy")
 
 func _physics_process(delta):
 	# Set Gravity Physics
@@ -78,11 +79,11 @@ func _on_hit_zone_area_entered(area: Area2D) -> void:
 
 # Mekanik deteksi Player
 func _on_player_detector_body_entered(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		chase = true
 
 func _on_player_detector_body_exited(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		chase = false
 
 # Meninggal

@@ -29,6 +29,7 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
+	add_to_group("enemy")
 
 func _physics_process(delta):
 	# Kalau Mati Gak bakal dijalanin
@@ -104,7 +105,7 @@ func death():
 func shoot_arrow():
 	# Deteksi Player
 	if player == null:
-		player = get_parent().get_node("Player")
+		player = get_tree().get_nodes_in_group("player")
 	
 	# Animasi Nembak
 	can_shoot = false
@@ -129,10 +130,10 @@ func shoot_arrow():
 
 # Deteksi Player yang masuk ke area serang
 func _on_player_detector_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		in_attack_range = true
 
 # Deteksi Player yang keluar dari area serang
 func _on_player_detector_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		in_attack_range = false

@@ -24,6 +24,7 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
+	add_to_group("enemy")
 
 func _physics_process(delta):
 	# Set Gravity Physics
@@ -62,12 +63,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_player_detector_body_entered(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		chase = true
 	pass # Replace with function body.
 
 func _on_player_detector_body_exited(body):
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		chase = false
 	pass # Replace with function body.
 
@@ -95,18 +96,18 @@ func death():
 
 # Serang
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		print("Hit")
-		PlayerStatus.HP -= 2
 		is_attack = true
 		$Animation.play("Attack")
-		
 		await $Animation.animation_finished
+		
+		PlayerStatus.HP -= 2
 		is_attack = false
 	pass # Replace with function body.
 
 # Player keluar dari area serang
 func _on_attack_area_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.is_in_group("player"):
 		is_attack = false
 	pass # Replace with function body.

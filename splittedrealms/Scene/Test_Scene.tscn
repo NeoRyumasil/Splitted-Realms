@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bahjmk38ggklr"]
+[gd_scene load_steps=15 format=3 uid="uid://bahjmk38ggklr"]
 
 [ext_resource type="Texture2D" uid="uid://bm8g2b4cdbn3t" path="res://Resources/Background/bg ethereal.png" id="1_prf2e"]
 [ext_resource type="Texture2D" uid="uid://blxxh6c6svvq6" path="res://Resources/Background/bg ethereal 2.png" id="2_ny4ou"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://t1sv5nmiv0cw" path="res://Asset/Character/Player/player.tscn" id="7_4e6k8"]
 [ext_resource type="PackedScene" uid="uid://b58l6oo5lhxro" path="res://Object/Orb.tscn" id="9_moij5"]
 [ext_resource type="PackedScene" uid="uid://br0rjsutdrtlr" path="res://Object/skeleton.tscn" id="9_t1lyc"]
+[ext_resource type="Script" path="res://Scripts/health.gd" id="10_b6ujx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7y6vk"]
 texture = ExtResource("3_hj6kf")
@@ -5850,3 +5851,23 @@ layer_0/tile_data = PackedInt32Array(-524299, 2621440, 30, -458763, 2621440, 31,
 
 [node name="Skeleton" parent="." instance=ExtResource("9_t1lyc")]
 position = Vector2(615, 194)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+z_index = 10
+offset_left = 26.0
+offset_top = 20.0
+offset_right = 122.0
+offset_bottom = 51.0
+scale = Vector2(1.65982, 1.58538)
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="UI"]
+z_index = 10
+offset_left = 34.0
+offset_top = 75.0
+offset_right = 99.0
+offset_bottom = 98.0
+text = "Health : "
+script = ExtResource("10_b6ujx")

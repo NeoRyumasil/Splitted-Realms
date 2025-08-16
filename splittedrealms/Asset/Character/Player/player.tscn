@@ -204,7 +204,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3sk3m")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 7.0
 }, {
@@ -230,7 +230,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ttxv")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 7.0
 }, {
@@ -256,7 +256,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mdnos")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 7.0
 }, {
@@ -305,7 +305,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0u3ua")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 7.0
 }, {
@@ -373,4 +373,5 @@ position = Vector2(1, 8.5)
 shape = SubResource("RectangleShape2D_q0vrv")
 
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
+[connection signal="area_entered" from="Hit_Zone" to="." method="_on_hit_zone_area_entered"]
 [connection signal="body_entered" from="Hit_Zone" to="." method="_on_hit_zone_body_entered"]
